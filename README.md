@@ -1,6 +1,9 @@
 # Pip-Boy Hunter 🕵️‍♂️💻
 
-![Pip-Boy Hunter Banner](https://your-image-link.com/banner.png)
+<p align="center">
+  <img src="https://media0.giphy.com/media/YrHFILYNmk2wByofdX/giphy.webp?cid=790b7611qzva7nfu632dcjcv6rmq6dc9h0ace1sro32sbtyr&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Pip-Boy Hunter Banner">
+</p>
+
 
 ## 📌 Sobre o Projeto
 
@@ -40,6 +43,22 @@ O **Pip-Boy Hunter** é um script avançado de automação para pentest e bug bo
 | [Amass](https://github.com/OWASP/Amass) | Mapeamento de rede e enumeração | [OWASP](https://owasp.org/) |
 | [SQLmap](https://github.com/sqlmapproject/sqlmap) | Exploração de SQL Injection | [Bernardo Damele](https://github.com/sqlmapproject) |
 | [XSS Hunter](https://github.com/mandatoryprogrammer/xsshunter) | Detecção de XSS avançado | [MandatoryProgrammer](https://github.com/mandatoryprogrammer) |
+| [Gau](https://github.com/lc/gau) | Coleta de URLs arquivadas | [lc](https://github.com/lc) |
+| [Waybackurls](https://github.com/tomnomnom/waybackurls) | Coleta de URLs arquivadas | [TomNomNom](https://github.com/tomnomnom) |
+| [Assetfinder](https://github.com/tomnomnom/assetfinder) | Descoberta de ativos | [TomNomNom](https://github.com/tomnomnom) |
+| [Hakrawler](https://github.com/hakluke/hakrawler) | Web crawler para bug bounty | [Hakluke](https://github.com/hakluke) |
+| [Httpx](https://github.com/projectdiscovery/httpx) | Scanner de informações HTTP | [ProjectDiscovery](https://github.com/projectdiscovery) |
+| [Dirsearch](https://github.com/maurosoria/dirsearch) | Força bruta de diretórios e arquivos | [Mauro Soria](https://github.com/maurosoria) |
+| [Feroxbuster](https://github.com/epi052/feroxbuster) | Força bruta de diretórios em Rust | [epi](https://github.com/epi052) |
+| [FFUF](https://github.com/ffuf/ffuf) | Força bruta de diretórios e parâmetros | [joohoi](https://github.com/joohoi) |
+| [Masscan](https://github.com/robertdavidgraham/masscan) | Scanner de portas de alta velocidade | [Robert David Graham](https://github.com/robertdavidgraham) |
+| [Naabu](https://github.com/projectdiscovery/naabu) | Scanner de portas TCP | [ProjectDiscovery](https://github.com/projectdiscovery) |
+| [JSParser](https://github.com/nahamsec/JSParser) | Extração de URLs e endpoints de JavaScript | [NahamSec](https://github.com/nahamsec) |
+| [KXSS](https://github.com/Emoe/kxss) | Detecção de XSS refletido | [Emoe](https://github.com/Emoe) |
+| [Dalfox](https://github.com/hahwul/dalfox) | Scanner de XSS avançado | [Hahwul](https://github.com/hahwul) |
+| [GF](https://github.com/tomnomnom/gf) | Busca de padrões em respostas HTTP | [TomNomNom](https://github.com/tomnomnom) |
+| [Nuclei](https://github.com/projectdiscovery/nuclei) | Scanner de vulnerabilidades baseado em templates | [ProjectDiscovery](https://github.com/projectdiscovery) |
+| [ReconFTW](https://github.com/six2dez/reconftw) | Automação de recon avançado | [six2dez](https://github.com/six2dez) |
 
 ## 🎮 Como Usar
 
