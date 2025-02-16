@@ -197,7 +197,7 @@ install_tools() {
 
 run_scan() {
     header
-    read -p "Digite o domínio alvo (ex: target.com): " target
+    read -p "Digite o domínio alvo (ex: nasa.gov): " target
     validate_domain "$target"
 
     
