@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Cores e Estilo
+
 PIPBOY_GREEN='\033[1;32m'
 PIPBOY_BLACK='\033[0;30m'
-NC='\033[0m' # No Color
+NC='\033[0m' 
 
-# ASCII Art
+
 display_ascii() {
     echo -e "${PIPBOY_GREEN}"
     echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⠛⢶⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
@@ -48,17 +48,17 @@ display_ascii() {
     echo -e "${NC}"
 }
 
-# Função para exibir o cabeçalho
+
 header() {
     clear
     display_ascii
     echo -e "${PIPBOY_GREEN}=========================================${NC}"
-    echo -e "${PIPBOY_GREEN}       🚀 BUG BOUNTY SCAN AUTOMÁTICO 🚀 ${NC}"
+    echo -e "${PIPBOY_GREEN}             Cheat terminal              ${NC}"
     echo -e "${PIPBOY_GREEN}=========================================${NC}"
     echo ""
 }
 
-# Função para animação de carregamento
+
 loading_animation() {
     echo -ne "${PIPBOY_GREEN}Carregando "
     for i in {1..10}; do
@@ -68,7 +68,7 @@ loading_animation() {
     echo -e "${NC}"
 }
 
-# Função para detectar o gerenciador de pacotes
+
 detect_package_manager() {
     if command -v pacman &> /dev/null; then
         echo -e "${PIPBOY_GREEN}Detectado: Pacman (Arch Linux)${NC}"
@@ -88,7 +88,7 @@ detect_package_manager() {
     fi
 }
 
-# Função para validar entrada do domínio
+
 validate_domain() {
     if [[ ! "$1" =~ ^[a-zA-Z0-9.-]+$ ]]; then
         echo -e "${PIPBOY_GREEN}[✖] Domínio inválido! Certifique-se de inserir um domínio válido.${NC}"
@@ -96,7 +96,7 @@ validate_domain() {
     fi
 }
 
-# Função para instalar ferramenta com fallback inteligente
+
 install_tool() {
     TOOL_NAME=$1
     GO_REPO=$2
@@ -106,10 +106,10 @@ install_tool() {
         if $PKG_MANAGER "$TOOL_NAME" &> /dev/null; then
             echo -e "${PIPBOY_GREEN}[✔] $TOOL_NAME instalado com sucesso!${NC}"
         elif [ -n "$GO_REPO" ]; then
-            echo -e "${PIPBOY_GREEN}[!] Falha ao instalar via gerenciador, tentando via Go...${NC}"
+            echo -e "${PIPBOY_GREEN}[!] Instalando via Go...${NC}"
             go install "$GO_REPO"@latest
             mv ~/go/bin/"$TOOL_NAME" /usr/bin/ 2>/dev/null
-            echo -e "${PIPBOY_GREEN}[✔] $TOOL_NAME instalado via Go e movido para /usr/bin/${NC}"
+            echo -e "${PIPBOY_GREEN}[✔] $TOOL_NAME instalado e movido para /usr/bin/${NC}"
         else
             echo -e "${PIPBOY_GREEN}[✖] Falha ao instalar $TOOL_NAME! Deseja fornecer uma URL alternativa? (s/n)${NC}"
             read -r choice
@@ -123,7 +123,7 @@ install_tool() {
     fi
 }
 
-# Detecta linguagem e instala ferramenta corretamente
+
 detect_and_install() {
     URL=$1
     if [[ "$URL" =~ github.com ]]; then
@@ -144,7 +144,7 @@ detect_and_install() {
     fi
 }
 
-# Menu interativo
+
 menu() {
     header
     echo -e "${PIPBOY_GREEN}1. Executar Scan Completo${NC}"
@@ -170,7 +170,7 @@ menu() {
     esac
 }
 
-# Função para instalar ferramentas
+
 install_tools() {
     header
     detect_package_manager
@@ -194,13 +194,13 @@ install_tools() {
     menu
 }
 
-# Função para executar o scan
+
 run_scan() {
     header
     read -p "Digite o domínio alvo (ex: target.com): " target
     validate_domain "$target"
 
-    # Criando ambiente virtual Python se necessário
+    
     VENV_DIR="venv"
     if [ ! -d "$VENV_DIR" ]; then
         echo -e "${PIPBOY_GREEN}[+] Criando ambiente virtual Python...${NC}"
@@ -208,21 +208,21 @@ run_scan() {
     fi
     source "$VENV_DIR/bin/activate"
 
-    # Criando pastas de resultados
+    
     mkdir -p results docun-info
 
-    # Iniciando o scan
+    
     echo -e "${PIPBOY_GREEN}=========================================${NC}"
-    echo -e "${PIPBOY_GREEN}      🔍 INICIANDO O SCAN AUTOMÁTICO 🔍  ${NC}"
+    echo -e "${PIPBOY_GREEN}        INICIANDO O SCAN AUTOMÁTICO      ${NC}"
     echo -e "${PIPBOY_GREEN}=========================================${NC}"
 
-    # Coletando subdomínios
+    
     loading_animation
     subfinder -d "$target" | tee results/subdomains.txt
     amass enum -passive -d "$target" | tee -a results/subdomains.txt
     sort -u results/subdomains.txt -o results/subdomains.txt
 
-    # Coletando URLs
+    
     loading_animation
     waybackurls "$target" | tee results/wayback_urls.txt
     gau --subs "$target" | tee results/gau_urls.txt
@@ -278,12 +278,12 @@ $(cat results/sqlmap_results.txt)
 \
 EOF
 
-    # Finalização
+    
     echo -e "${PIPBOY_GREEN}[+] Scan finalizado! Resultados salvos em 'results/' e 'docun-info/'${NC}"
     deactivate
     sleep 2
     menu
 }
 
-# Iniciar o menu
+
 menu
