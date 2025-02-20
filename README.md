@@ -84,6 +84,6 @@ Este projeto é distribuído sob a **MIT License**. Veja o arquivo [LICENSE](LIC
 
 ## 💬 Contato
 
-🐙 GitHub: [seu-usuario](https://github.com/WesleyA0101)  
+🐙 GitHub: [WesleyA0101](https://github.com/WesleyA0101)  
 
 
