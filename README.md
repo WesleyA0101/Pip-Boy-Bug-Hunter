@@ -1,4 +1,4 @@
-# Pip-Boy Hunter 🕵️‍♂️💻
+# Pip-Boy Hunter (BETA)🕵️‍♂️💻
 
 <p align="center">
   <img src="https://media0.giphy.com/media/YrHFILYNmk2wByofdX/giphy.webp?cid=790b7611qzva7nfu632dcjcv6rmq6dc9h0ace1sro32sbtyr&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Pip-Boy Hunter Banner">
@@ -8,6 +8,10 @@
 ## 📌 Sobre o Projeto
 
 O **Pip-Boy Hunter** é um script avançado de automação para pentest e bug bounty, inspirado no design icônico do **Pip-Boy de Fallout**. Ele instala, organiza e executa ferramentas essenciais para hackers éticos e preguiçosos.
+
+## Avisos
+
+Essa ferramenta ainda está em fase BETA e pode conter alguns erros que serão corrigidos em breve. Algumas funções serão adicionadas e melhorias no design serão implementadas.
 
 ## ⚙️ Funcionalidades
 
